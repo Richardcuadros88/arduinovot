@@ -4,9 +4,8 @@ const token = '1093970624:AAGv5-k6E53uApfVZYPwalgcE73Z5E14Ud8';
 
 const bot = new TelegramBot(token, {polling: true});
 
-var SerialPort  = require ( ' Cserialport ' );
- puerto
- var Mipuerto= new SerialPort ( ' / dev / COM3 ' , {
+var SerialPort  = require ( 'serialport' );
+var Mipuerto= new SerialPort ( ' / dev / COM3 ' , {
   baudRate: 9600,
   autoOpen: true
 } ) ;
