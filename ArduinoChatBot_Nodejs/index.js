@@ -7,7 +7,7 @@ const bot = new TelegramBot(token, {polling: true});
 var SerialPort  = require ( ' Cserialport ' );
  puerto
  var Mipuerto= new SerialPort ( ' / dev / COM3 ' , {
-  Velocidad de transmisión : 9600
+  baudRate: 9600,
   autoOpen: true
 } ) ;
 
