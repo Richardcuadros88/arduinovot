@@ -10,8 +10,10 @@ bot.on('message', (msg) => {
  var Mensaje = msg.text;
  if (Mensaje == "Encender") {
    console.log ("Encendiendo el led");
+    bot.sendMessage(chatId, 'Encendere el led');
  } else if (Mensaje == "Apagar"){
    console.log ("Apagar el led");
+    bot.sendMessage(chatId, 'Apagare el led');
  }
- bot.sendMessage(chatId, 'Received your message');
+
 });
