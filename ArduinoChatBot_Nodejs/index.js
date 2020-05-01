@@ -8,7 +8,7 @@ const bot = new TelegramBot(token, {polling: true});
 bot.on('message', (msg) => {
  const chatId = msg.chat.id;
  var Mensaje = msg.text;
- if (mesaje == "encender" {
+ if (mesaje == "encender") {
    console.log ("apagar el led");
  }
  bot.sendMessage(chatId, 'Recivi tu mensaje');
