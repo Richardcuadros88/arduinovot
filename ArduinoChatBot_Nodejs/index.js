@@ -4,8 +4,9 @@ const token = '1093970624:AAGv5-k6E53uApfVZYPwalgcE73Z5E14Ud8';
 
 const bot = new TelegramBot(token, {polling: true});
 
+var IdMiChat =1189408516;
 var SerialPort  = require ( 'serialport' );
-var Mipuerto= new SerialPort ( ' / dev / COM3 ' , {
+var Mipuerto= new SerialPort ( '/dev/COM3', {
   baudRate: 9600,
   autoOpen: true
 } ) ;
@@ -25,6 +26,14 @@ bot.on('message', (msg) => {
     Mipuerto.write(L);
 
  }
-
-bot.sendMessage ( chatId , 'Recibí su mensaje ' )  ;
 });
+
+Mipuerto.setEncoding('COM3');
+
+Mipuerto.on('data', function(data){
+  console.log ("lo que entro es"+ data);
+  if (data [0]=='H') {
+    console.log("Boton Precionado");
+    bot.sendMessage(IdMiChat, "se preciono el boton ");
+  }
+ });
