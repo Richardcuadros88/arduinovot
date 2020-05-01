@@ -28,7 +28,7 @@ bot.on('message', (msg) => {
  }
 });
 
-Mipuerto.setEncoding('COM3');
+Mipuerto.setEncoding('utf8');
 
 Mipuerto.on('data', function(data){
   console.log ("lo que entro es"+ data);
