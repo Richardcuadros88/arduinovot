@@ -6,9 +6,7 @@ const bot = new TelegramBot(token, {polling: true});
 
 var IdMiChat =1189408516;
 var SerialPort  = require ( 'serialport' );
-var serialPort = serialport.SerialPort;
-var portName = process.argv[2];
-var Mipuerto= new SerialPort ( portName, {
+var Mipuerto= new SerialPort ( COM3, {
   baudRate: 9600,
   autoOpen: true
 } ) ;
