@@ -29,7 +29,7 @@ void loop() {
 }
   if (digitalRead(2) == 0) {
     Serial.println("H");
-    delay(200);
+    delay(500);
   }
 
   if (Serial.available()) {
