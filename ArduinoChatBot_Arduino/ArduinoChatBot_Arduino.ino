@@ -1,26 +1,45 @@
-int Boton = 2;
-int Led = 9;
+
+
+int estado = 0;
+int estadoanterior =0;
+int salida= 0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(Boton, INPUT_PULLUP);
-  pinMode(Led, OUTPUT);
+  pinMode(2, INPUT_PULLUP);     // Boton (entrada del pin 2) 
+  pinMode(9, OUTPUT);             // LED (salida del pin 9)
 }
 
 void loop() {
-  if (digitalRead(Boton) == 0) {
+  estado = digitalRead(2);      // leer el estdo del boton
+  if ((estado== LOW)&&(estadoanterior==HIGH)){               // etado del boton bajo, inicia enn 0
+    salida =1 - salida;
+    delay (500);
+    
+    }
+    estadoanterior = estado;
+    if (salida==1){
+    digitalWrite(9, HIGH);          // encendemos el LED       
+     }
+
+    else  {
+      digitalWrite(9, LOW);
+
+// programacion monitor arduino
+
+}
+  if (digitalRead(2) == 0) {
     Serial.println("H");
-    delay(500);
+    delay(200);
   }
 
   if (Serial.available()) {
     char Letra = Serial.read();
     if (Letra == 'H') {
-      digitalWrite(Led, HIGH);
+      digitalWrite(9, HIGH);
     }
     else if (Letra == 'L') {
-      digitalWrite(Led, LOW);
+      digitalWrite(9, LOW);
     }
   }
-
 }
