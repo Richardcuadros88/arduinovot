@@ -5,7 +5,7 @@ const token = '1093970624:AAGv5-k6E53uApfVZYPwalgcE73Z5E14Ud8';
 const bot = new TelegramBot(token, {
   polling: true
 });
-var IdMiChat = 000;//cambiar por tu ID del chat
+var IdMiChat = 1189408516;
 
 var SerialPort = require('serialport');
 var MiPuerto = new SerialPort('/dev/ttyUSB0', {
