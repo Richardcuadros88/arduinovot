@@ -13,7 +13,7 @@ void loop() {
   estado = digitalRead(2);      // leer el estdo del boton
   if ((estado== LOW)&&(estadoanterior==HIGH)){               // etado del boton bajo, inicia enn 0
     salida =1 - salida;
-    //delay (500);
+    delay (500);
     
     }
     estadoanterior = estado;
